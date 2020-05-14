@@ -363,7 +363,8 @@ PASSED TRUE  :csv/checkpubsub.csv   28  0=getfield[send[(`SOL_1);(`.solace.getst
 ++++++++++ ALL TESTS PASSED ++++++++++
 ```
 ### Buffering
-The feed handler uses a socket pair to pass received data to the kdb+ server. In this situation, problems can arise if data is being written to the kdb+ faster than it is being read.  This is resolved within the code by using a circular buffer.  Data is written to the buffer only when there is space for it, and is removed once it has been read. If data is being written faster than it is being read, the buffer will fill up and writing will be paused until the receiver has read and removed some data.
+
+This feed handler is dual threased and uses the sd0 functionality of kdb+ with a socket pair to signal that data is available from the solace thread. However the data its self, is not written to the socket pair. Instead it is written to a buffer which the q main thread inspects. This has a number of advantages, it by passes the overhead of transferring the data over a network pipe, and it allows the q main thread to conflate updates if possible.  
 
 ### Useful links
 
