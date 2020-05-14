@@ -182,7 +182,7 @@ unsubscribe | Unsubscribes from a topic | Topic name | `.solace.unsubscibe["Defa
 publish | Publishes a message for a particular topic | \[topic name; message\] | `.solace.publish["Default"; 1 2 3]`
 checkconnect | Returns a boolean based on connection status | Niladic | `.solace.checkconnect[]`
 gettopics | Returns a table of topics and subscription status booleans | Niladic | `.solace.gettopics[]`
-getcbstats | Returns a dictionary of h, t, n, size | Niladic | `.solace.getcbstats[]`
+getcbstats | Returns a metric relating to the flow of messages between the feed threads | Niladic | `.solace.getcbstats[]`
 getopts | Returns a dictionary of the broker's arguments and their values | Niladic | `.solace.getopts[]`
 changeloglevel | Changes the q log level to a specified level | Integer between 0 and 4 (see loglevel in Table 2) | `.solace.changeloglevel[2]`
 <p align="center"> <strong> Table 1 </strong> </p>
