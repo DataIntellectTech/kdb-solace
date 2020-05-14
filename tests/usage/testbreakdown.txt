@@ -1,0 +1,15 @@
+Breakdown of which csvs contain tests from each test set.
+
+Test set 1 - [Connections and disconnections].
+  connectionsanddisconnections.csv
+
+Test set 2 - [Sending and receiving messsages].
+  checkpubsub.csv
+  pubsubdefaulttypes.csv
+  pubsubdict.csv
+  gettopics.csv
+
+Test set 3 - [Payloads].
+  pubsubpayload.csv
+  payloadcallback.csv
+  throughput.csv

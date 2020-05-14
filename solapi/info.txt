@@ -1,0 +1,6 @@
+
+Dowwnload API files to this directory after cloning repo.
+https://solace.com/downloads/
+[ solclient_Linux26-i386_opt_7.13.0.4.tar.gz ]
+[ solclient_Linux26-x86_64_opt_7.13.0.4.tar.gz ]
+

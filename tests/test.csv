@@ -1,0 +1,6 @@
+action,ms,bytes,lang,code,repeat,minver,comment
+run,0,0,q,"\l ../q/solace.q",1,0,
+run,0,0,q,".solace.init[]",1,0
+true,0,0,q,"not @[.solace.checkconnect;::;{x}]~"noinit"",1,0
+run,0,0,q,"@[.solace.sessiondisconnect;::;{x}]",1,0
+true,0,0,q,"@[.solace.checkconnect;::;{x}]~"noinit"",1,0

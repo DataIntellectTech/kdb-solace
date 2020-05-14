@@ -1,0 +1,8 @@
+action,ms,bytes,lang,code,repeat,minver,comment
+run,0,0,q,d:(`user`password`host`port`loglvl)!(`admin;`admin;cmdl[`testhost];55555;2),1,,
+comment,0,0,q,,1,,
+run,0,0,q,stop `SOL_1,1,,
+run,0,0,q,start[cmdl[`bport]+1;`SOL_1],1,,
+run,0,0,q,send[(`SOL_1);(`.solace.init;d)],1,,
+run,0,0,q,tp:system"t  do[10000;send[(`SOL_1);(`.solace.publish;\"default\";1 2 3 4 5 6)]]",1,,
+true,0,0,q,tp<5000,1,,

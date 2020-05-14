@@ -1,0 +1,6 @@
+In order to run tests use the command 
+      q solacetest.q 
+from the tests directory. This will run all the tests csv's in the csv folder.
+
+In order to run individual csv's use the command.
+      q solacetest.q -testsrc csv/csvname.csv
