@@ -364,7 +364,7 @@ PASSED TRUE  :csv/checkpubsub.csv   28  0=getfield[send[(`SOL_1);(`.solace.getst
 ```
 ### Buffering
 
-This feed handler is dual threased and uses the sd0 functionality of kdb+ with a socket pair to signal that data is available from the solace thread. However the data its self, is not written to the socket pair. Instead it is written to a buffer which the q main thread inspects. This has a number of advantages, it by passes the overhead of transferring the data over a network pipe, and it allows the q main thread to conflate updates if possible.  
+This feed handler is dual threaded and uses the sd0 functionality of kdb+ with a socket pair to signal that data is available from the solace thread. However the data itself, is not written to the socket pair. Instead it is written to a buffer which the q main thread inspects. This has a number of advantages, it bypasses the overhead of transferring the data over a network pipe, and it allows the q main thread to conflate updates if possible.  
 
 ### Useful links
 
