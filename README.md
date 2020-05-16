@@ -139,7 +139,6 @@ Provided it is run on the same machine as the Solace broker, a connection to the
 ```
 solace@homer:~/TorQ-Solace$ q q/test_conf.q
 KDB+ 3.5 2017.11.30 Copyright (C) 1993-2017 Kx Systems
-l64/ 24()core 128387MB solace homer 127.0.1.1 EXPIRE 2020.06.30 AquaQ #55345
 
 [04/17/20 14:09:03] INFO : Initializing session...
 [04/17/20 14:09:03] INFO : Session initialization complete
@@ -244,8 +243,6 @@ In order to run tests, we run the `solacetest.q` file inside the tests directory
 ```
 solace@homer:~/TorQ-Solace/tests$ q solacetest.q -usage
 KDB+ 3.5 2017.11.30 Copyright (C) 1993-2017 Kx Systems
-l64/ 24()core 128387MB solace homer 127.0.1.1 EXPIRE 2020.06.30 AquaQ #55345
-
 
 Usage: q solacetest.q [OPTIONS]
 
