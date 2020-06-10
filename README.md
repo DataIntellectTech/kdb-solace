@@ -23,10 +23,10 @@ CONTAINER ID        IMAGE                           COMMAND               CREATE
 ```
 ### Install Solace Kdb+ Client
 
-Once the container is running correctly, clone the TorQ-Solace repository
+Once the container is running correctly, clone the kdb-solace repository
 ```
-solace@homer:~$ git clone https://github.com/AquaQAnalytics/TorQ-Solace
-Cloning into 'TorQ-Solace'...
+solace@homer:~$ git clone https://github.com/AquaQAnalytics/kdb-solace
+Cloning into 'kdb-solace'...
 Username for 'https://github.com': user
 Password for 'https://user@github.com':
 remote: Enumerating objects: 30, done.
@@ -39,11 +39,11 @@ Resolving deltas: 100% (502/502), done.
 The library should have the following structure
 ```
 solace@homer:~$ ls
-TorQ-Solace
-solace@homer:~$ cd TorQ-Solace/
-solace@homer:~/TorQ-Solace$ ls
+kdb-solace
+solace@homer:~$ cd kdb-solace/
+solace@homer:~/kdb-solace$ ls
 include  LICENSE  Makefile  obj_Linux26-x86_64_debug  q  README.md  solclient  src  tests
-solace@homer:~/TorQ-Solace$ ls -la
+solace@homer:~/kdb-solace$ ls -la
 total 76
 drwxrwxr-x 9 solace solace  4096 Apr 17 14:37 .
 drwxrwxr-x 5 solace solace  4096 Apr 17 14:37 ..
@@ -60,7 +60,7 @@ drwxrwxr-x 4 solace solace  4096 Apr  9 12:20 tests
 ```
 Copy the contents of the unzipped solace C lib package (https://solace.com/downloads/) to the solapi directory.
 ```
-solace@homer:~/TorQ-Solace/$ ls -al solapi/
+solace@homer:~/kdb-solace/$ ls -al solapi/
 total 28
 drwxrwxr-x  6 solace solace 4096 May 12 22:47 .
 drwxrwxr-x 12 solace solace 4096 May 12 22:44 ..
@@ -73,18 +73,18 @@ drwxrwxr-x  3 solace solace 4096 May 12 22:40 lib
 
 Inside the main directory, run the `make` command to build the library files needed for the application to run.
 ```
-solace@homer:~/TorQ-Solace$ make
+solace@homer:~/kdb-solace$ make
 if ! test -d lib;then mkdir lib/;fi
 rm -f        lib/solace.*
 gcc  -Lobj_Linux26-x86_64_debug/lib  -shared -DKXVER=3 -fPIC  -D_LINUX_X86_64 -lpthread -lsolclient -Iinclude -DPROVIDE_LOG_UTILITIES  src/solace.c src/solace_k.c src/cb.c -o lib/solace.so -lsolclient -lrt -Wno-discarded-qualifiers -Wno-incompatible-pointer-types
 ```
 Finally set some environment variables to allow kdb+ to find the relevant shared objects.
 ```
-solace@homer:~/TorQ-Solace$ source setenv.sh
+solace@homer:~/kdb-solace$ source setenv.sh
 ```
 Running sample programs from the `ex` directory can be used to test that the broker is running. Run the `make` command to build the object files and executable files.
 ```
-solace@homer:~/TorQ-Solace/solapi/ex$ make
+solace@homer:~/kdb-solace/solapi/ex$ make
 gcc -g  -I.. -I../include  -DSOLCLIENT_EXCLUDE_DEPRECATED -DPROVIDE_LOG_UTILITIES -DSOLCLIENT_CONST_PROPERTIES -g   -c directPubSub.c -o directPubSub.o
 gcc -g  -I.. -I../include  -DSOLCLIENT_EXCLUDE_DEPRECATED -DPROVIDE_LOG_UTILITIES -DSOLCLIENT_CONST_PROPERTIES -g   -c common.c -o common.o
 
@@ -96,11 +96,11 @@ gcc -g -o transactions transactions.o common.o os.o -L../lib -L../obj_Linux26-x8
 
 Usage statements for each executable can be found by running 
 ```
-solace@homer:~/TorQ-Solace/solapi/ex$ ./executablefile
+solace@homer:~/kdb-solace/solapi/ex$ ./executablefile
 ```
 For example,
 ```
-solace@homer:~/TorQ-Solace/solapi/ex$ ./directPubSub
+solace@homer:~/kdb-solace/solapi/ex$ ./directPubSub
 
 directPubSub.c (Copyright 2009-2019 Solace Corporation. All rights reserved.)
 Missing required parameter '--cu'
