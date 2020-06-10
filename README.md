@@ -1,4 +1,4 @@
-# TorQ-Solace
+# kdb-solace
 
 ## Solace
 
