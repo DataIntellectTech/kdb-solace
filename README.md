@@ -137,7 +137,7 @@ Binary Attachment:                      len=16
 ```
 Provided it is run on the same machine as the Solace broker, a connection to the broker can be initialised by running the `test_conf.q` script (otherwise the host will have to be changed)
 ```
-solace@homer:~/kdb-olace$ q q/test_conf.q
+solace@homer:~/kdb-solace$ q q/test_conf.q
 KDB+ 3.5 2017.11.30 Copyright (C) 1993-2017 Kx Systems
 
 [04/17/20 14:09:03] INFO : Initializing session...
@@ -241,7 +241,7 @@ s    0    Default 1587379630040 1587379630040 2020.04.20D10:47:10.040752114 1 2 
 
 In order to run tests, we run the `solacetest.q` file inside the tests directory. Adding the flag `usage` in the command line will explain what optional arguments it takes.
 ```
-solace@homer:~/kdb-olace/tests$ q solacetest.q -usage
+solace@homer:~/kdb-solace/tests$ q solacetest.q -usage
 KDB+ 3.5 2017.11.30 Copyright (C) 1993-2017 Kx Systems
 
 Usage: q solacetest.q [OPTIONS]
