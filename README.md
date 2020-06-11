@@ -121,7 +121,7 @@ Where OPTIONS are:
 ```
 You can execute this sample program by specifying the IP address of the broker
 ```
-solace@homer:~/TorQ-Solace/solapi/ex$ ./directPubSub -u admin -c tcp:172.17.0.6
+solace@homer:~/kdb-solace/solapi/ex$ ./directPubSub -u admin -c tcp:172.17.0.6
 
 directPubSub.c (Copyright 2009-2019 Solace Corporation. All rights reserved.)
 CCSMP Version 7.11.0.8 (Aug  7 2019 16:39:16)   Variant: Linux26-x86_64_opt - C SDK
@@ -137,7 +137,7 @@ Binary Attachment:                      len=16
 ```
 Provided it is run on the same machine as the Solace broker, a connection to the broker can be initialised by running the `test_conf.q` script (otherwise the host will have to be changed)
 ```
-solace@homer:~/TorQ-Solace$ q q/test_conf.q
+solace@homer:~/kdb-olace$ q q/test_conf.q
 KDB+ 3.5 2017.11.30 Copyright (C) 1993-2017 Kx Systems
 
 [04/17/20 14:09:03] INFO : Initializing session...
@@ -241,7 +241,7 @@ s    0    Default 1587379630040 1587379630040 2020.04.20D10:47:10.040752114 1 2 
 
 In order to run tests, we run the `solacetest.q` file inside the tests directory. Adding the flag `usage` in the command line will explain what optional arguments it takes.
 ```
-solace@homer:~/TorQ-Solace/tests$ q solacetest.q -usage
+solace@homer:~/kdb-olace/tests$ q solacetest.q -usage
 KDB+ 3.5 2017.11.30 Copyright (C) 1993-2017 Kx Systems
 
 Usage: q solacetest.q [OPTIONS]
@@ -258,7 +258,7 @@ Where OPTIONS are:
 ```
 In order to run all tests in the csv directory, use the command
 ```
-solace@homer:~/TorQ-Solace/tests$ q solacetest.q
+solace@homer:~/kdb-solace/tests$ q solacetest.q
 
 ...
 
@@ -311,11 +311,11 @@ PASSED TRUE  :csv/throughput.csv    497 tp<5000
 ```
 In order to run individual csvs, use the command
 ```
-solace@homer:~/TorQ-Solace/tests$ q solacetest.q -testsrc csv/csvname.csv
+solace@homer:~/kdb-solace/tests$ q solacetest.q -testsrc csv/csvname.csv
 ```
 For example,
 ```
-solace@homer:~/TorQ-Solace/tests$ q solacetest.q -testsrc csv/checkpubsub.csv
+solace@homer:~/kdb-solace/tests$ q solacetest.q -testsrc csv/checkpubsub.csv
 KDB+ 3.5 2017.11.30 Copyright (C) 1993-2017 Kx Systems
 l64/ 24()core 128387MB solace homer 127.0.1.1 EXPIRE 2020.06.30 AquaQ #55345
 
